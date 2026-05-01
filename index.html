@@ -8,12 +8,12 @@
   <link rel="manifest" href="manifest.json">
 
   <!-- Icono pantalla de inicio (iOS + Android) -->
-  <link rel="apple-touch-icon" href="logo-daranv.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="logo-daranv.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="logo-daranv.png">
+  <link rel="apple-touch-icon" href="imagenes/logo-daranv.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="imagenes/logo-daranv.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="imagenes/logo-daranv.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Daran Studio">
+  <meta name="apple-mobile-web-app-title" content="Pedro Daran">
 
   <!-- =========================================================
        SEO / Open Graph — ACTUALIZA solo si cambia el dominio/imagen
@@ -22,19 +22,28 @@
   <meta name="description" content="Especialista en Marketing y Contenido Creativo DARAN™ STUDIO. Contáctame desde mi tarjeta digital.">
 
   <!-- IMPORTANTE: que sea EXACTAMENTE la URL que compartes -->
-  <link rel="canonical" href="">
+  <link rel="canonical" href="https://pedro-daran.vercel.app/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Tarjeta Digital – Pedro Emilio Daran-DARAN™ STUDIO">
   <meta property="og:description" content="Especialista en Marketing y Contenido Creativo DARAN™ STUDIO. Contáctame desde mi tarjeta digital.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tarjeta Digital">
-  <meta property="og:url" content="">
+  <meta property="og:url" content="https://pedro-daran.vercel.app/">
+
+  <!-- Imagen OG (1200x630, <2MB) — requerida para vista previa en WhatsApp -->
+  <meta property="og:image" content="https://pedro-daran.vercel.app/imagenes/card-previewD.v3.jpg">
+  <meta property="og:image:secure_url" content="https://pedro-daran.vercel.app/imagenes/card-previewD.v3.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Tarjeta digital de Pedro Emilio Daran-DARAN™ STUDIO">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tarjeta – Pedro Emilio Daran-DARAN™ STUDIO">
   <meta name="twitter:description" content="Especialista en Marketing y Contenido Creativo DARAN™ STUDIO. Contáctame desde mi tarjeta digital.">
+  <meta name="twitter:image" content="https://pedro-daran.vercel.app/imagenes/card-previewD.v3.jpg">
 
   <style>
     /* ===== Reset & Vars ===== */
@@ -451,7 +460,7 @@ body {
 
     /* Compartir: usa la URL raíz donde están los OG tags */
     function shareCard(){
-      const url = window.location.href || '';
+      const url = 'https://pedro-daran.vercel.app/';
       const shareData = { title: document.title, text: document.title, url };
 
       if (navigator.share) {
