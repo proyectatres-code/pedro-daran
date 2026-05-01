@@ -229,7 +229,7 @@ body {
     .social-links{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
     .social-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;min-height:80px;border:1px solid rgba(0,200,232,0.14);border-radius:10px;text-decoration:none;color:rgba(232,244,248,0.7);background:rgba(0,200,232,0.04);transition:all .15s ease}
     .social-btn:hover{border-color:rgba(0,200,232,0.35);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,200,232,0.10);background:rgba(0,200,232,0.08);color:#fff}
-    .social-btn img{width:clamp(26px,5vw,34px);height:clamp(26px,5vw,34px);margin-bottom:6px}
+    .social-btn img,.social-btn svg{width:clamp(26px,5vw,34px);height:clamp(26px,5vw,34px);margin-bottom:6px;fill:currentColor;flex-shrink:0}
     .social-btn span{font-size:clamp(9px,2.2vw,10px);letter-spacing:.5px;text-transform:uppercase;font-weight:700}
 
     /* ===== Toast ===== */
@@ -397,10 +397,12 @@ body {
           <img src="https://i.postimg.cc/sDvGBgD2/tiktok.png" alt="TikTok" loading="lazy"><span>TikTok</span>
         </a>
         <a class="social-btn" href="https://www.instagram.com/pedro_daran" target="_blank" rel="noopener">
-          <img src="insta.png" alt="Instagram" loading="lazy"><span>Instagram</span>
+          <img src="https://i.postimg.cc/GpYwPpcH/insta.png" alt="Instagram" loading="lazy">
+          <span>Instagram</span>
         </a>
         <a class="social-btn" href="https://wa.me/524774087500?text=Hola%2C%20me%20interesa%20contactarte" target="_blank" rel="noopener">
-          <img src="whatsapp.png" alt="WhatsApp" loading="lazy"><span>WhatsApp</span>
+          <img src="https://i.postimg.cc/LsLyxCnV/whatsapp.png" alt="WhatsApp" loading="lazy">
+          <span>WhatsApp</span>
         </a>
       </div>
     </div>
