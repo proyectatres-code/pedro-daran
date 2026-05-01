@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a243f" />
+
+  <!-- =========================================================
+       SEO / Open Graph — ACTUALIZA solo si cambia el dominio/imagen
+       ========================================================= -->
+  <title>Tarjeta Digital – Angelica Daran Montenegro</title>
+  <meta name="description" content="Arquitecta de Negocios Digitales DARAN™ STUDIO. Contáctame desde mi tarjeta digital.">
+
+  <!-- IMPORTANTE: que sea EXACTAMENTE la URL que compartes -->
+  <link rel="canonical" href="https://adaran.vercel.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tarjeta Digital – Angelica Daran-DARAN™ STUDIO">
+  <meta property="og:description" content="Arquitecta de Negocios Digitales DARAN™ STUDIO. Contáctame desde mi tarjeta digital.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tarjeta Digital">
+  <meta property="og:url" content="https://adaran.vercel.app/">
+
+  <!-- Imagen OG (1200x630, <2MB). VERSIONADA EN EL NOMBRE -->
+  <meta property="og:image" content="https://adaran.vercel.app/imagenes/card-preview.v3.jpg">
+  <meta property="og:image:secure_url" content="https://adaran.vercel.app/imagenes/card-preview.v3.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Tarjeta digital de Angelica Daran-DARAN™ STUDIO">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tarjeta – Angelica Daran-DARAN™ STUDIO">
+  <meta name="twitter:description" content="Arquitecta de Negocios Digitales DARAN™ STUDIO. Contáctame desde mi tarjeta digital.">
+  <meta name="twitter:image" content="https://adaran.app/card-preview.v3.jpg">
+
+  <style>
+    /* ===== Reset & Vars ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box }
+:root {
+  --bg: #071526;
+  --card: rgba(255, 255, 255, 0.07);
+  --ink: #f0f6ff;
+  --accent: #00c8e8;
+  --accent2: #0a84d4;
+  --gold: #c9a84c;
+  --divider: linear-gradient(
+    180deg,
+    rgba(0, 200, 232, 0.20),
+    rgba(0, 0, 0, 0.50),
+    rgba(10, 132, 212, 0.15)
+  );
+  --link: #00c8e8;
+  --link-hover: #0a84d4;
+}
+html, body { min-height: 100% }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+               'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(
+    145deg,
+    #071526 0%,
+    #0b2240 35%,
+    #0d2d52 60%,
+    #071f3a 100%
+  );
+  color: #f0f6ff;
+  overflow-x: hidden;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+    /* ===== Splash (animación suave) ===== */
+    #splash{
+      position:fixed; inset:0; z-index:9999;
+      display:flex; align-items:center; justify-content:center;
+      background:url('https://i.postimg.cc/SRcNmMTB/fondo-logod.png') center/cover no-repeat;
+      animation:fadeOut .5s ease-in-out 2.5s forwards;
+      will-change: opacity, visibility;
+      contain: content;
+    }
+    #splash-logo{
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; transform:translateZ(0) scale(.72);
+      will-change: transform, opacity;
+      animation:logoAppear 1s ease-out .2s forwards;
+    }
+    /* LOGO más grande en móvil, sin distorsión */
+    #splash-logo img{
+      max-width:92vw;
+      max-height:55vh;
+      object-fit:contain;
+    }
+    @media (min-width:768px){
+      #splash-logo img{ max-width:42vw; max-height:50vh; }
+    }
+    @keyframes logoAppear{
+      0%   { opacity:0; transform:translateZ(0) scale(.72); }
+      60%  { opacity:1; transform:translateZ(0) scale(1.06); }
+      85%  { opacity:1; transform:translateZ(0) scale(.995); }
+      100% { opacity:1; transform:translateZ(0) scale(1); }
+    }
+    @keyframes fadeOut{ to{ opacity:0; visibility:hidden; } }
+    #app{ opacity:0; animation:appFadeIn .5s ease-in-out 2.8s forwards; }
+    @keyframes appFadeIn{ to{ opacity:1; } }
+
+    @media (prefers-reduced-motion: reduce){
+      #splash, #splash-logo, #app{ animation:none !important; }
+      #splash-logo{ opacity:1; transform:none; }
+      #app{ opacity:1; }
+    }
+
+    /* ===== Header ===== */
+    .header{
+      background:linear-gradient(135deg,#134aa7 0%,#0a243f 100%);
+      padding:40px 20px; text-align:center; box-shadow:0 4px 6px rgba(0,0,0,.1);
+    }
+    .profile-photo{
+      width:150px;height:150px;border-radius:50%;background:#e0e0e0;margin:0 auto 20px;
+      overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.2);border:2px solid #fff;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+    .name{
+      color:#fff;
+      font-size:clamp(24px,5vw,32px);
+      line-height:1.15;
+      margin-bottom:8px;
+      font-weight:700;
+      letter-spacing:-0.2px;
+    }
+    .title{
+      color:rgba(255,255,255,.92);
+      font-size:clamp(14px,2.6vw,18px);
+      margin-bottom:22px;
+      font-weight:500;
+    }
+
+    /* ===== Botonera superior ===== */
+    .action-wrap{padding:0 16px}
+    .action-buttons{
+      position:relative;display:flex;align-items:stretch;gap:0;
+      max-width:520px;margin:0 auto;background:var(--card);border-radius:18px;padding:6px;
+      box-shadow:0 10px 24px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.30), inset 0 -1px 0 rgba(0,0,0,.16);
+      backdrop-filter:blur(2px);overflow:hidden
+    }
+    .divider{width:1px;margin:6px 6px;background:var(--divider);opacity:.9;pointer-events:none}
+    .action-btn{
+      flex:1 1 0;border:0;cursor:pointer;background:transparent;color:var(--ink);
+      padding:clamp(10px,3vw,14px) 10px;border-radius:12px;
+      font-size:clamp(12px,3.2vw,14px);font-weight:800;text-transform:uppercase;
+      display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+      min-height:46px;transition:box-shadow .15s ease,background .15s ease,transform .05s ease
+    }
+    .action-btn svg{width:18px;height:18px;fill:currentColor}
+    .action-btn:hover{background:rgba(255,255,255,.10)}
+    .action-btn:active{transform:translateY(1px);background:rgba(255,255,255,.12)}
+    .action-btn--white{color:#fff;text-decoration:none}
+
+    .icon-btn{flex:0 0 auto;width:46px;height:46px;border-radius:12px;padding:0;display:flex;align-items:center;justify-content:center}
+    .icon-btn svg{width:20px;height:20px}
+
+    @media (max-width:360px){
+      .action-buttons{max-width:100%}
+      .action-btn{font-size:11.5px;padding:9px 8px;min-height:44px}
+      .icon-btn{width:44px;height:44px}
+    }
+
+    /* ===== Tarjeta de contacto ===== */
+    .contact-info{
+      background:#fff;margin:20px;border-radius:16px;padding:24px;
+      box-shadow:0 8px 32px rgba(0,0,0,.1)
+    }
+    .contact-item{display:flex;align-items:flex-start;gap:15px;padding:14px 0;border-bottom:1px solid #f0f0f0;transition:background .25s ease}
+    .contact-item:last-child{border-bottom:none}
+    .contact-item:hover{background:#f8f9fa;border-radius:8px}
+    .contact-icon{
+      width:42px;height:42px;background:#f0f7ff;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;color:#0f3156;flex:0 0 42px;margin-top:2px
+    }
+    .contact-details h3{
+      font-size:clamp(14px,3vw,18px);
+      color:#666;margin-bottom:4px;text-transform:uppercase;
+      font-weight:400;
+      letter-spacing:.4px;
+    }
+    .contact-details p{
+      font-size:clamp(15px,3.4vw,17px);
+      color:#333;font-weight:500;
+      overflow-wrap:anywhere;word-break:break-word;
+      line-height:1.25;
+    }
+
+    /* Links como el "dato Email" */
+    .contact-details a,
+    .contact-details .clickable-link{
+      font-size:clamp(15px,3.4vw,17px);
+      line-height:1.25;
+      font-weight:500;
+      color:#0066cc;
+      text-decoration:none;
+      display:inline-block;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+      transition:color .15s ease;
+    }
+    .contact-details a:hover,
+    .contact-details .clickable-link:hover{ color:#0751cc; }
+
+    /* ===== Redes ===== */
+    .social-section{
+      background:#fff;margin:20px;border-radius:16px;padding:18px;
+      box-shadow:0 8px 32px rgba(0,0,0,.1)
+    }
+    .social-title{font-size:20px;font-weight:700;color:#333;margin-bottom:12px;text-align:center}
+    .social-links{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .social-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;min-height:80px;border:2px solid #f0f0f0;border-radius:10px;text-decoration:none;color:#666;background:#fafafa;transition:all .15s ease}
+    .social-btn:hover{border-color:#e0e0e0;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);background:#fff}
+    .social-btn img{width:clamp(26px,5vw,34px);height:clamp(26px,5vw,34px);margin-bottom:6px}
+    .social-btn span{font-size:clamp(9px,2.2vw,10px);letter-spacing:.5px;text-transform:uppercase;font-weight:700}
+
+    /* ===== Toast ===== */
+    .toast{
+      position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(100px);
+      background:#333;color:#fff;padding:12px 24px;border-radius:25px;font-size:14px;z-index:1000;transition:transform .3s ease
+    }
+    .toast.show{transform:translateX(-50%) translateY(0)}
+  </style>
+</head>
+<body>
+
+  <!-- Splash -->
+  <div id="splash" aria-hidden="true">
+    <div id="splash-logo">
+      <img src="https://i.postimg.cc/4y1k8b20/logo-daran.png" alt="Logo DARAN™ STUDIO">
+    </div>
+  </div>
+
+  <!-- App -->
+  <div id="app">
+    <header class="header">
+      <div class="profile-photo">
+        <img src="photo-profile.png" alt="Foto de perfil de Angelica Daran-DARAN™ STUDIO">
+      </div>
+      <h1 class="name">Angelica Daran Montenegro</h1>
+      <p class="title">Arquitecta de Negocios Digitales DARAN™ STUDIO</p>
+
+      <div class="action-wrap">
+        <div class="action-buttons" role="group" aria-label="Acciones">
+          <a class="action-btn" href="adaran.vcf" download="adaran.vcf" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            Guardar
+          </a>
+
+          <span class="divider" aria-hidden="true"></span>
+
+          <a class="action-btn action-btn--white"
+             href="https://www.google.com/maps/search/?api=1&query=Circuito%20San%20Roque%20Norte%20%23345%2C%20Parque%20industrial%20Santa%20Fe%20Ampliacion%2C%20Silao%2C%20Guanajuato%2C%20Mexico%2C%20C.P.%2036275"
+             target="_blank" rel="noopener" onclick="showToast('Abriendo Google Maps...')">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Ubicación
+          </a>
+
+          <span class="divider" aria-hidden="true"></span>
+
+          <!-- Botón Compartir con el MISMO SVG original -->
+          <button class="icon-btn" type="button" onclick="shareCard()" aria-label="Compartir" title="Compartir">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a3.3 3.3 0 0 0 0-1.39l7.02-4.11A2.99 2.99 0 0 0 18 7.91c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .23.03.45.08.66L8.05 9.78A2.99 2.99 0 0 0 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.89 0 1.69-.39 2.25-1l7.03 4.11c-.05.2-.08.42-.08.64 0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contacto -->
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <div class="contact-details">
+          <h3>Teléfono</h3>
+          <a id="phone" class="clickable-link" href="tel:+52477881 1195" onclick="showToast('Abriendo aplicación de teléfono...')">+52 477 881 1195</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div class="contact-details">
+          <h3>Email</h3>
+          <a id="email" class="clickable-link" href="mailto:hablemos@daranstudio.com?subject=Contacto%20desde%20tarjeta%20digital&body=Hola%20Roc%C3%ADo%20del%20Pilar%20Tenorio," onclick="showToast('Abriendo aplicación de email...')">hablemos@daranstudio.com</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <div class="contact-details">
+          <h3>Sitio Web</h3>
+          <a id="website" class="clickable-link" href="https://daranstudio.com/" target="_blank" rel="noopener" onclick="showToast('Abriendo sitio web...')">https://daranstudio.com/</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div class="contact-details">
+          <h3>Empresa</h3>
+          <p id="company">DARAN™ STUDIO</p>
+        </div>
+      </div>
+<!--
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div class="contact-details">
+          <h3>Dirección</h3>
+          <a id="address" class="clickable-link" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=Circuito%20San%20Roque%20Norte%20%23345%2C%20Parque%20industrial%20Santa%20Fe%20Ampliacion%2C%20Silao%2C%20Guanajuato%2C%20Mexico%2C%20C.P.%2036275"
+             onclick="showToast('Abriendo Google Maps...')">
+            Circuito San Roque Norte #345, Parque industrial Santa Fe Ampliacion, Silao, Guanajuato, Mexico, C.P. 36275
+          </a>
+        </div>
+      </div>
+    </div>
+-->
+    <!-- Redes -->
+    <div class="social-section">
+      <h2 class="social-title">Contáctame</h2>
+      <div class="social-links">
+        <a class="social-btn" href="https://www.linkedin.com/in/angelica-daran-montenegro" target="_blank" rel="noopener">
+          <img src="linkedin.png" alt="LinkedIn" loading="lazy"><span>LinkedIn</span>
+        </a>
+ <!--
+        <a class="social-btn" href="https://www.instagram.com/rocio_del_pilar_t?igsh=MWryMzUydzZqNjdkZw==" target="_blank" rel="noopener">
+          <img src="insta.png" alt="Instagram" loading="lazy"><span>Instagram</span>
+        </a>
+-->
+        <a class="social-btn" href="https://wa.me/52477881 1195?text=Hola%2C%20me%20interesa%20contactarte" target="_blank" rel="noopener">
+          <img src="whatsapp.png" alt="WhatsApp" loading="lazy"><span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    /* Toast pequeño reutilizable */
+    function showToast(msg){
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+      return true;
+    }
+
+    /* Compartir: usa siempre la ruta limpia /r */
+    function shareCard(){
+      const url = 'https://adaran.vercel.app/r';
+      const shareData = { title: document.title, text: document.title, url };
+
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => showToast('Enlace compartido exitosamente'))
+          .catch(() => {});
+      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url)
+          .then(() => showToast('Enlace copiado al portapapeles'))
+          .catch(() => alert('Copia este enlace: ' + url));
+      } else {
+        alert('Copia este enlace: ' + url);
+      }
+    }
+  </script>
+</body>
+</html>

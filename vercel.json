@@ -1,0 +1,30 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/index.html", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/r", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/index.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, must-revalidate" },
+        { "key": "Accept-Ranges", "value": "none" }
+      ]
+    },
+    {
+      "source": "/imagenes/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Accept-Ranges", "value": "none" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Accept-Ranges", "value": "none" }
+      ]
+    }
+  ]
+}
