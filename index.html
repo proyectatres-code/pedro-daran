@@ -484,11 +484,13 @@ body {
   var device = /Mobi|Android/i.test(ua)?'Móvil':/Tablet|iPad/i.test(ua)?'Tablet':'Desktop';
   try {
     var db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    db.from('card_views').insert({
-      card_id:     CARD_ID,
-      device_type: device,
-      referrer:    document.referrer||'direct',
-      user_agent:  ua.slice(0,250)
+    db.auth.signInAnonymously().then(function(){
+      db.from('card_views').insert({
+        card_id:     CARD_ID,
+        device_type: device,
+        referrer:    document.referrer||'direct',
+        user_agent:  ua.slice(0,250)
+      });
     });
   } catch(e){}
 })();
