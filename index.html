@@ -474,6 +474,7 @@ body {
       }
     }
   </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function(){
   var CARD_ID           = 'pedro_daran';
@@ -481,23 +482,15 @@ body {
   var SUPABASE_ANON_KEY = 'sb_publishable_CrJ9ttgJvhrnvPc8sUhmIQ_k17vxBCM';
   var ua     = navigator.userAgent||'';
   var device = /Mobi|Android/i.test(ua)?'Móvil':/Tablet|iPad/i.test(ua)?'Tablet':'Desktop';
-  try{
-    fetch(SUPABASE_URL+'/rest/v1/card_views',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': 'Bearer '+SUPABASE_ANON_KEY,
-        'Prefer':'return=minimal'
-      },
-      body:JSON.stringify({
-        card_id:CARD_ID,
-        device_type:device,
-        referrer:document.referrer||'direct',
-        user_agent:ua.slice(0,250)
-      })
+  try {
+    var db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    db.from('card_views').insert({
+      card_id:     CARD_ID,
+      device_type: device,
+      referrer:    document.referrer||'direct',
+      user_agent:  ua.slice(0,250)
     });
-  }catch(e){}
+  } catch(e){}
 })();
 </script>
 </body>
