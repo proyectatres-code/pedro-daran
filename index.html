@@ -484,7 +484,11 @@ body {
               + '?card_id=' + CARD_ID
               + '&device_type=' + device
               + '&referrer=' + ref;
-  new Image().src = url;
+  try {
+    fetch(url, { mode:'no-cors', keepalive:true });
+  } catch(e) {
+    new Image().src = url;
+  }
 })();
 </script>
 </body>
