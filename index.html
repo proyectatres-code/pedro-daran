@@ -481,6 +481,7 @@ body {
   var device  = /Mobi|Android/i.test(ua)?'Móvil':/Tablet|iPad/i.test(ua)?'Tablet':'Desktop';
   fetch('https://script.google.com/macros/s/AKfycbytZ7IlpEuIt9yBdifKf4cfEy-huX7xc9ihuR2W_smzIUmMxFUslS_Oy4Ty4naoTL-c/exec',{
     method:'POST',
+    mode:'no-cors',
     headers:{'Content-Type':'text/plain'},
     body:JSON.stringify({
       card_id:     CARD_ID,
