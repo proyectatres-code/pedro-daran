@@ -479,10 +479,15 @@ body {
   var CARD_ID = 'pedro_daran';
   var ua      = navigator.userAgent||'';
   var device  = /Mobi|Android/i.test(ua)?'Móvil':/Tablet|iPad/i.test(ua)?'Tablet':'Desktop';
-  fetch('https://ecoconecta-tracking.vercel.app/api/track',{
+  fetch('/api/track',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({card_id:CARD_ID,device_type:device,referrer:document.referrer||'direct',user_agent:ua.slice(0,250)})
+    body:JSON.stringify({
+      card_id:     CARD_ID,
+      device_type: device,
+      referrer:    document.referrer||'direct',
+      user_agent:  ua.slice(0,250)
+    })
   });
 })();
 </script>
