@@ -479,9 +479,9 @@ body {
   var CARD_ID = 'pedro_daran';
   var ua      = navigator.userAgent||'';
   var device  = /Mobi|Android/i.test(ua)?'Móvil':/Tablet|iPad/i.test(ua)?'Tablet':'Desktop';
-  fetch('/api/track',{
+  fetch('https://script.google.com/macros/s/AKfycbytZ7IlpEuIt9yBdifKf4cfEy-huX7xc9ihuR2W_smzIUmMxFUslS_Oy4Ty4naoTL-c/exec',{
     method:'POST',
-    headers:{'Content-Type':'application/json'},
+    headers:{'Content-Type':'text/plain'},
     body:JSON.stringify({
       card_id:     CARD_ID,
       device_type: device,
