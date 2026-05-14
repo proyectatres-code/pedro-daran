@@ -478,18 +478,13 @@ body {
 (function(){
   var CARD_ID = 'pedro_daran';
   var ua      = navigator.userAgent||'';
-  var device  = /Mobi|Android/i.test(ua)?'Móvil':/Tablet|iPad/i.test(ua)?'Tablet':'Desktop';
-  fetch('https://script.google.com/macros/s/AKfycbyWiX3KGiDdqo2MBpUKZiOP_TXS_W2nwzQWOZDGlOMqPUNv095KYQkAxu1HlLRwuUlN/exec',{
-    method:'POST',
-    mode:'no-cors',
-    headers:{'Content-Type':'text/plain'},
-    body:JSON.stringify({
-      card_id:     CARD_ID,
-      device_type: device,
-      referrer:    document.referrer||'direct',
-      user_agent:  ua.slice(0,250)
-    })
-  });
+  var device  = /Mobi|Android/i.test(ua)?'Movil':/Tablet|iPad/i.test(ua)?'Tablet':'Desktop';
+  var ref     = encodeURIComponent(document.referrer||'direct');
+  var url     = 'https://script.google.com/macros/s/AKfycbyWiX3KGiDdqo2MBpUKZiOP_TXS_W2nwzQWOZDGlOMqPUNv095KYQkAxu1HlLRwuUlN/exec'
+              + '?card_id=' + CARD_ID
+              + '&device_type=' + device
+              + '&referrer=' + ref;
+  new Image().src = url;
 })();
 </script>
 </body>
